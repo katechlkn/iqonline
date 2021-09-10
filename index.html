@@ -5,21 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>World Bank Publications</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <link rel="stylesheet" href="style.css">
     <script src="script/addDepositAmount.js"></script>
-    <script src="script/ru_datepicker.js"></script>
     <script src="script/calculation.js"></script>
-    <script>
-        $.datepicker.setDefaults($.datepicker.regional['ru']);
-        $(function () {
-            $("#datepicker").datepicker();
-        });
-    </script>
 </head>
 
 <body>
@@ -52,7 +42,7 @@
                     </ul>
                 </div>
             </header>
-            <div class="site__content">
+            <content class="content">
                 <div class="content__main">
                     <ul class="content__menu container">
                         <li class="content__menu__list"><a href="#" class="content__menu__link">Главная</a></li>
@@ -65,13 +55,13 @@
                 <div class="container">
                     <div class="content__main__form">
                         <h4 class="content__main__form__upper">Калькулятор</h4>
-                        <form action="calc.php" method="POST" id="calculation">
+                        <form action="" method="POST" id="calculation">
                             <div class="content__form">
                                 <div class="content__form__area">
                                     <div class=" block_1">Дата оформления вклада
                                     </div>
                                     <div class=" block_2">
-                                        <input type="text" name="datepicker" id="datepicker" placeholder="дд.мм.гггг"
+                                        <input type="date" name="datepicker" id="datepicker" placeholder="дд.мм.гггг"
                                             class="content__form__input__area" required>
                                     </div>
                                     <div class="content__form__area__range"></div>
@@ -79,8 +69,8 @@
                                 <div class="content__form__area">
                                     <div class=" block_1">Сумма вклада</div>
                                     <div class=" block_2">
-                                        <input type="text" name="depositAmount" id="depositAmount" placeholder="10 000"
-                                            class="content__form__input__area" required>
+                                        <input type="text" name="depositAmount" id="depositAmount" min=1000 max=3000000
+                                            placeholder="10 000" class="content__form__input__area" required>
                                     </div>
                                     <div class="content__form__area__range">
                                         <input type="range" min="1000" max="3000000" step="1000" value="1500000"
@@ -122,7 +112,7 @@
                                     </div>
                                     <div class=" block_2">
                                         <input type="text" name="depositReplenishmentAmount"
-                                            id="depositReplenishmentAmount" placeholder="10 000"
+                                            id="depositReplenishmentAmount" min=1000 max=3000000 placeholder="10 000"
                                             class="content__form__input__area" required>
                                     </div>
                                     <div class="content__form__area__range">
@@ -145,7 +135,7 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            </content>
         </div>
         <footer class="footer container">
             <ul class="footer__menu">
